@@ -1,0 +1,47 @@
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+token: token
+ports:
+  - port: 8001:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8002:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8003:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8004:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8005:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8006:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8007:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8008:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8009:80
+    nodeFilters:
+      - loadbalancer
+  - port: 8010:80
+    nodeFilters:
+      - loadbalancer
+options:
+  k3d:
+    wait: true
+    timeout: '60s'
+    disableLoadbalancer: false
+    disableImageVolume: false
+    disableRollback: false
+    loadbalancer:
+      configOverrides:
+        - settings.workerConnections=2048
+  kubeconfig:
+    updateDefaultKubeconfig: true
+    switchCurrentContext: true

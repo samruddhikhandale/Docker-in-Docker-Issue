@@ -1,0 +1,91 @@
+{
+    "name": "codespace",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:1.0.3-20-bookworm",
+    "features": {
+      "ghcr.io/devcontainers/features/github-cli:1": {},
+      "ghcr.io/devcontainers/features/docker-in-docker:2.3.0": {},
+      "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+      "ghcr.io/devcontainers/features/git:1": {},
+      // "ghcr.io/devcontainers/features/terraform:1": {},
+      "ghcr.io/rio/features/k3d:1": {},
+      "ghcr.io/rio/features/skaffold:2": {},
+      "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
+      "ghcr.io/flexwie/devcontainer-features/op:1": {},
+      "ghcr.io/devcontainers/features/common-utils:2": {
+        "configureZshAsDefaultShell": true
+      },
+      "ghcr.io/devcontainers-contrib/features/argo-cd:1": {}
+    },
+    "hostRequirements": {
+      "cpus": 4
+    },
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "dbaeumer.vscode-eslint",
+          "nrwl.angular-console",
+          "esbenp.prettier-vscode",
+          "firsttris.vscode-jest-runner",
+          "apollographql.vscode-apollo",
+          "GitHub.copilot",
+          "mikestead.dotenv",
+          "hashicorp.terraform",
+          "Prisma.prisma",
+          "redhat.vscode-yaml",
+          "humao.rest-client",
+          "gruntfuggly.todo-tree",
+          "ms-kubernetes-tools.vscode-kubernetes-tools",
+          "DotJoshJohnson.xml",
+          "MS-vsliveshare.vsliveshare",
+          "mutantdino.resourcemonitor",
+          "rangav.vscode-thunder-client",
+          "DavidAnson.vscode-markdownlint",
+          "eamodio.gitlens",
+          "GraphQL.vscode-graphql",
+          "capaj.graphql-codegen-vscode",
+          "figma.figma-vscode-extension",
+          "formulahendry.docker-explorer",
+          "mindaro.mindaro",
+          "augustocdias.tasks-shell-input",
+          "rioj7.command-variable",
+          "GitHub.vscode-pull-request-github"
+        ],
+        "settings": {
+          "typescript.tsdk": "node_modules/typescript/lib",
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": false,
+          "[typescript]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.formatOnSave": true
+          },
+          "[typescriptreact]": {
+            "editor.defaultFormatter": "esbenp.prettier-vscode",
+            "editor.formatOnSave": true
+          },
+          "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true
+          },
+          "[xml]": {
+            "editor.defaultFormatter": "DotJoshJohnson.xml"
+          },
+          "[terraform-vars]": {
+            "editor.defaultFormatter": "hashicorp.terraform"
+          },
+          "[prisma]": {
+            "editor.defaultFormatter": "Prisma.prisma"
+          },
+          "terminal.integrated.defaultProfile.linux": "zsh"
+        }
+      }
+    },
+    // Use 'onCreateCommand' to run commands as part of container creation.
+    "onCreateCommand": "zsh .devcontainer/on-create.sh",
+  
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "zsh .devcontainer/post-create.sh",
+  
+    // Use 'postStartCommand' to run commands after the container starts.
+    "postStartCommand": "zsh .devcontainer/post-start.sh",
+  
+    "waitFor": "postStartCommand"
+  }
