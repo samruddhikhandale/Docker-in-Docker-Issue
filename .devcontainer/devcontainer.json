@@ -3,7 +3,7 @@
     "image": "mcr.microsoft.com/devcontainers/typescript-node:1.0.3-20-bookworm",
     "features": {
       "ghcr.io/devcontainers/features/github-cli:1": {},
-      "ghcr.io/devcontainers/features/docker-in-docker:2.3.0": {},
+      "./docker-in-docker": {},
       "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
       "ghcr.io/devcontainers/features/git:1": {},
       // "ghcr.io/devcontainers/features/terraform:1": {},
